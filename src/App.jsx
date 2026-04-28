@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import Header from "./components/Header";
 import RecipeGrid from "./components/RecipeGrid";
 import Pagination from "./components/Pagination";
 import SkeletonCard from "./components/SkeletonCard";
@@ -98,35 +99,10 @@ function App() {
 
   return (
     <div className="container" style={{ padding: 24 }}>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 16,
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 24,
-        }}
-      >
-        <div>
-          <h1 style={{ margin: 0 }}>Recipe Explorer</h1>
-          <p style={{ margin: "8px 0 0", color: "var(--text-secondary)" }}>
-            Browse recipes, save favourites, and switch themes.
-          </p>
-        </div>
-        <button
-          onClick={() => setDarkMode((prev) => !prev)}
-          style={{
-            padding: "10px 16px",
-            borderRadius: 8,
-            border: "1px solid var(--border)",
-            background: "var(--surface)",
-            cursor: "pointer",
-          }}
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
-      </div>
+      <Header
+        darkMode={darkMode}
+        onToggleDarkMode={() => setDarkMode((prev) => !prev)}
+      />
 
       <div
         style={{
