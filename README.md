@@ -1,16 +1,79 @@
-# React + Vite
+# Recipe Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite recipe browsing app that fetches recipe data from the DummyJSON API and lets users browse, sort, and save favourites with dark mode support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches recipes from `https://dummyjson.com/recipes`
+- Grid-based recipe browsing experience
+- Favorite recipes persisted in `localStorage`
+- Sort recipes by rating, calories, or cook time
+- Pagination for browsing recipe pages
+- Dark / light theme toggle with persistent preference
+- Loading skeletons and error handling
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- Tailwind CSS
+- Material UI icon dependencies
+- ESLint for linting
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/App.jsx` — main app logic, data fetching, state, and UI state management
+- `src/components/Header.jsx` — header and theme toggle button
+- `src/components/RecipeGrid.jsx` — responsive recipe grid layout
+- `src/components/RecipeCard.jsx` — individual recipe card with favourite toggle
+- `src/components/Pagination.jsx` — simple page navigation controls
+- `src/components/SkeletonCard.jsx` — loading skeleton UI
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ recommended
+- npm or yarn installed
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in the terminal, typically `http://localhost:5173`.
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+### Lint the project
+
+```bash
+npm run lint
+```
+
+## Notes
+
+- Favourite recipes and theme selection are stored in browser `localStorage`.
+- The app uses client-side fetching and displays skeleton cards while loading.
+- Pagination is only shown on the main recipe listing, not the favourites tab.
+
+## License
+
+This project is intended for learning and demonstration purposes.
